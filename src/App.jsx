@@ -64,14 +64,14 @@ const App = () => {
               <Navbar />
             </div>
 
-            <div>
+            <div className="pt-12 md:p-0">
               <Routes>
                 <Route path="/" element={<Ecommerce />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
 
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/employees" element={<Employees />} />
-                <Route path="/cutomers" element={<Customers />} />
+                <Route path="/customers" element={<Customers />} />
 
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />
