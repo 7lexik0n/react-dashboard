@@ -15,8 +15,10 @@ import {
   stackedPrimaryXAxis,
   stackedPrimaryYAxis,
 } from "../../data/dummy";
+import { useStateContext } from "../../contexts/ContextProvider";
 
 const Stacked = ({ width, height }) => {
+  const { currentColor } = useStateContext();
   return (
     <ChartComponent
       width={width}
@@ -39,7 +41,11 @@ const Stacked = ({ width, height }) => {
       <Inject services={[Tooltip, Legend, Category, StackingColumnSeries]} />
       <SeriesCollectionDirective>
         {stackedCustomSeries.map((item, index) => (
-          <SeriesDirective key={index} {...item} />
+          <SeriesDirective
+            key={index}
+            {...item}
+            fill={index === 0 ? currentColor : "#404041"}
+          />
         ))}
       </SeriesCollectionDirective>
     </ChartComponent>
