@@ -18,14 +18,22 @@ import {
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const Stacked = ({ width, height }) => {
-  const { currentColor } = useStateContext();
+  const { currentColor, currentMode } = useStateContext();
+
+  const labelStyle = {
+    labelStyle: { color: currentMode === "Dark" ? "#fff" : "#686868" },
+    titleStyle: {
+      color: currentMode === "Dark" ? "#fff" : "#686868",
+    },
+  };
+
   return (
     <ChartComponent
       width={width}
       height={height}
       id="stack-chart"
-      primaryXAxis={stackedPrimaryXAxis}
-      primaryYAxis={stackedPrimaryYAxis}
+      primaryXAxis={{ ...stackedPrimaryXAxis, ...labelStyle }}
+      primaryYAxis={{ ...stackedPrimaryYAxis, ...labelStyle }}
       chartArea={{
         border: {
           width: 0,
@@ -35,8 +43,11 @@ const Stacked = ({ width, height }) => {
         enable: true,
       }}
       legendSettings={{
-        background: "white",
+        textStyle: {
+          color: currentMode === "Dark" ? "#fff" : "#33373E",
+        },
       }}
+      background={currentMode === "Dark" ? "#33373E" : "#fff"}
     >
       <Inject services={[Tooltip, Legend, Category, StackingColumnSeries]} />
       <SeriesCollectionDirective>

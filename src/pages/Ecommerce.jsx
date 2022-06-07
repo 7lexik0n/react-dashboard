@@ -14,7 +14,9 @@ const Ecommerce = () => {
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400">Earnings</p>
+              <p className="font-bold dark:text-gray-200 text-slate-900">
+                Earnings
+              </p>
               <p className="text-2xl">$55,000.00</p>
             </div>
           </div>
@@ -43,12 +45,18 @@ const Ecommerce = () => {
                 {item.icon}
               </button>
               <p className="mt-3">
-                <span className="text-xl font-semibold">{item.amount}</span>
-                <span className={`text-sm text-${item.pcColor} ml-2`}>
+                <span className="text-xl font-semibold dark:text-gray-200 text-slate-900">
+                  {item.amount}
+                </span>
+                <span
+                  className={`text-sm dark:-text-gray-200 text-${item.pcColor} ml-2`}
+                >
                   {item.percentage}
                 </span>
               </p>
-              <p className="text-sm text-gray-400 mt-1">{item.title}</p>
+              <p className="text-sm dark:-text-gray-200 text-gray-400 mt-1">
+                {item.title}
+              </p>
             </div>
           ))}
         </div>
@@ -63,7 +71,9 @@ const Ecommerce = () => {
                 <span>
                   <GoPrimitiveDot />
                 </span>
-                <span>Expense</span>
+                <span className="dark:text-gray-200 text-slate-900">
+                  Expense
+                </span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
                 <span>
@@ -82,13 +92,13 @@ const Ecommerce = () => {
                     23%
                   </span>
                 </p>
-                <p className="text-gray-500 mt-1">Budget</p>
+                <p className="dark:text-gray-200 text-gray-500 mt-1">Budget</p>
               </div>
               <div className="mt-8">
                 <p>
                   <span className="text-3xl font-semibold">$45,000</span>
                 </p>
-                <p className="text-gray-500 mt-1">Expense</p>
+                <p className="dark:text-gray-200 text-gray-500 mt-1">Expense</p>
               </div>
 
               <div className="mt-5">
