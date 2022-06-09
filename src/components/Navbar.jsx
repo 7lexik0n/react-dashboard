@@ -29,6 +29,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 
 const Navbar = () => {
   const {
+    activeMenu,
     setActiveMenu,
     isClicked,
     handleClick,
@@ -58,11 +59,13 @@ const Navbar = () => {
     // eslint-disable-next-line
   }, [screenSize]);
 
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
+
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
       <NavButton
         title="Menu"
-        customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+        customFunc={handleActiveMenu}
         color={currentColor}
         icon={<AiOutlineMenu />}
       />
