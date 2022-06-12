@@ -600,7 +600,7 @@ export const links = [
 export const cartData = [
   {
     image: product5,
-    name: "butterscotch ice-cream",
+    name: "Butterscotch ice-cream",
     category: "Milk product",
     price: "$250",
   },
